@@ -2,6 +2,9 @@
 
 Release History
 ===============
+1.5.3
+++++++
+ * Update Rooms to use sdk version 1.0.0b3 
 
 1.5.2
 ++++++

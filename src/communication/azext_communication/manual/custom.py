@@ -198,7 +198,6 @@ def communication_rooms_get_room(client, room_id):
 def communication_rooms_create_room(client,
                                     valid_from=None,
                                     valid_until=None,
-                                    join_policy=None,
                                     presenters=None,
                                     attendees=None,
                                     consumers=None):
@@ -208,7 +207,6 @@ def communication_rooms_create_room(client,
         return client.create_room(
             valid_from=valid_from,
             valid_until=valid_until,
-            room_join_policy=join_policy,
             participants=room_participants)
     except HttpResponseError:
         raise
@@ -227,25 +225,24 @@ def communication_rooms_delete_room(client, room_id):
 
 def communication_rooms_update_room(client, room_id,
                                     valid_from=None,
-                                    valid_until=None,
-                                    join_policy=None,
-                                    presenters=None,
-                                    attendees=None,
-                                    consumers=None):
+                                    valid_until=None):
     try:
-        room_participants = __to_room_participant(presenters, attendees, consumers)
-
         return client.update_room(
             room_id=room_id,
             valid_from=valid_from,
-            valid_until=valid_until,
-            room_join_policy=join_policy,
-            participants=room_participants)
+            valid_until=valid_until)
     except HttpResponseError:
         raise
     except Exception as ex:
         sys.exit(str(ex))
 
+def communication_rooms_list_rooms(client):
+    try:
+        return client.list_rooms();
+    except HttpResponseError:
+        raise
+    except Exception as ex:
+        sys.exit(str(ex))
 
 def communication_rooms_get_participants(client, room_id):
     try:

@@ -423,6 +423,9 @@ helps['communication rooms create'] = """
       - name: Create a room with valid-from and valid-until date/times
         text: |-
                az communication rooms create --valid-from "2022-07-14T10:21" --valid-until "2022-08-14T10:21"
+      - name: Create a room with InviteOnly join policy
+        text: |-
+               az communication rooms create --join-policy "InviteOnly"
       - name: Create a room with a list of participants with presenter role
         text: |-
                az communication rooms create --presenter-participants "8:acs:xxxxxx" "8:acs:xxxxxx"
@@ -459,15 +462,6 @@ helps['communication rooms delete'] = """
       - name: Delete an existing room
         text: |-
                az communication rooms delete --room "12345678901234567"
-"""
-
-helps['communication rooms list'] = """
-    type: command
-    short-summary: "List all active rooms belonged to a current Communication Service resource."
-    examples:
-      - name: List all active rooms
-        text: |-
-               az communication rooms list
 """
 
 helps['communication rooms participant'] = """

@@ -152,19 +152,15 @@ az communication rooms get --room "roomId"
 ```
 ##### Create-Room #####
 ```
-az communication rooms create --valid-from "2023-03-31T10:20:30" --valid-to "2023-03-31T10:20:30" --presenter-participants "8:acs:xxxxxx" "8:acs:xxxxxx" --attendee-participants "8:acs:xxxxxx" "8:acs:xxxxxx" --consumer-participants "8:acs:xxxxxx" "8:acs:xxxxxx"
+az communication rooms create --valid-from "2022-07-14T10:20:30" --valid-to "2022-07-14T10:20:30" --join-policy "CommunicationServiceUsers" --presenter-participants "8:acs:xxxxxx" "8:acs:xxxxxx" --attendee-participants "8:acs:xxxxxx" "8:acs:xxxxxx" --consumer-participants "8:acs:xxxxxx" "8:acs:xxxxxx"
 ```
 ##### Update-Room #####
 ```
-az communication rooms update --room "roomId" --valid-from "2023-03-31T10:20:30" --valid-to "2023-03-31T10:20:30"
+az communication rooms update --room "roomId" --valid-from "2022-07-14T10:20:30" --valid-to "2022-07-14T10:20:30" --join-policy "InviteOnly" --presenter-participants "8:acs:xxxxxx" "8:acs:xxxxxx" --attendee-participants "8:acs:xxxxxx" "8:acs:xxxxxx" --consumer-participants "8:acs:xxxxxx" "8:acs:xxxxxx"
 ```
 ##### Delete-Room #####
 ```
 az communication rooms delete --room "roomId"
-```
-##### List-Rooms #####
-```
-az communication rooms list
 ```
 ##### Get-Room-Participants #####
 ```
